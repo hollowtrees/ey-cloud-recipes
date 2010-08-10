@@ -4,7 +4,7 @@
 #
 
 
-package "net-ftp/pure-ftpd" do
+package "pure-ftpd" do
   action :install
 end
 
