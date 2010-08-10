@@ -5,11 +5,6 @@
 
 
 package "net-ftp/pure-ftpd" do
-  
-  ey_cloud_report "pure-ftpd" do
-    message "installing pure-ftpd package"
-  end
-  
   action :install
 end
 
