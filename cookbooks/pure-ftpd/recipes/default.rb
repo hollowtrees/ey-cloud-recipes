@@ -3,8 +3,7 @@
 # Recipe:: default
 #
 
-enable_package "net-ftp/pure-ftpd" do
-end
+enable_package "net-ftp/pure-ftpd"
 
 package "net-ftp/pure-ftpd" do
   action :install
