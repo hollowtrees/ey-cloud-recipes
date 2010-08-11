@@ -1,0 +1,14 @@
+check process pure-authd
+  with pidfile /var/run/pure-authd.pid
+  start program = "/usr/sbin/pure-authd -s /var/run/ftpd.sock -r /data/<%= @app_name %>/current/script/auth_devise" as uid <%= @user %> and gid <%= @user %>
+  stop program = "/usr/bin/pkill pure-authd as uid <%= @user %> and gid <%= @user %>
+
+check process pure-ftpd
+  with pidfile /var/run/pure-ftpd.pid
+  start program = "/usr/sbin/pure-ftpd -lextauth:/var/run/ftpd.sock" as uid <%= @user %> and gid <%= @user %>
+  stop program = "/usr/bin/pkill pure-ftpd as uid <%= @user %> and gid <%= @user %>
+
+check process pure-uploadscript
+  with pidfile /var/run/pure-uploadscript.pid
+  start program = "/usr/sbin/pure-uploadscript --run /data/<%= @app_name %>/current/script/after_upload.rb" as uid <%= @user %> and gid <%= @user %>
+  stop program = "/usr/bin/pkill pure-uploadscript as uid <%= @user %> and gid <%= @user %>
