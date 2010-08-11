@@ -5,7 +5,7 @@ check process pure-authd
 
 check process pure-ftpd
   with pidfile /var/run/pure-ftpd.pid
-  start program = "/usr/sbin/pure-ftpd -lextauth:/var/run/ftpd.sock" as uid <%= @user %> and gid <%= @user %>
+  start program = "/usr/sbin/pure-ftpd -lextauth\:/var/run/ftpd.sock" as uid <%= @user %> and gid <%= @user %>
   stop program = "/usr/bin/pkill pure-ftpd as uid <%= @user %> and gid <%= @user %>
 
 check process pure-uploadscript
